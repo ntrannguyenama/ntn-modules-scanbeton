@@ -23,6 +23,7 @@ resource "azurerm_mssql_database" "main" {
   sku_name            = local.sku_name
   max_size_gb         = local.max_size_gb
   geo_backup_enabled  = local.geo_backup_enabled
+  collation = "Latin1_General_100_CI_AS_SC_UTF8"
 
   tags = local.tags
 }
