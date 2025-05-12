@@ -26,9 +26,9 @@ module "naming_search" {
 
 
 resource "azurerm_cognitive_account" "openai" {
-  name                = "scanbeton-api"
-  location            = "eastus2"
-  resource_group_name = "ai"
+  name                = "scanbeton-dev-oai"
+  location            = "westeurope"
+  resource_group_name = "scanbeton-dev-rg"
   kind                = "OpenAI"
   sku_name            = "S0"
   tags                = var.tags
