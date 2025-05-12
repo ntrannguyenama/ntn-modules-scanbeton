@@ -19,15 +19,15 @@ locals {
     tags = merge(local.base_tags, var.tags)
 }
 
-# resource "random_password" "sql_admin" {
-#   length           = 16
-#   special          = true
-#   upper            = true
-#   lower            = true
-#   numeric          = true
-#   min_upper        = 1
-#   min_lower        = 1
-#   min_numeric      = 1
-#   min_special      = 1
-#   override_special = "!#$%&*()-_=+[]{}<>:?"
-# }
+resource "random_password" "sql_admin" {
+  length           = 16
+  special          = true
+  upper            = true
+  lower            = true
+  numeric          = true
+  min_upper        = 1
+  min_lower        = 1
+  min_numeric      = 1
+  min_special      = 1
+  override_special = "!#$%&*()-_=+[]{}<>:?"
+}
