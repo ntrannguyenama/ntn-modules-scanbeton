@@ -52,7 +52,27 @@ resource "azurerm_storage_account" "web" {
   allow_nested_items_to_be_public = local.allow_nested_items_to_be_public
 
   network_rules {
-    default_action = "Allow"
+    default_action = "Deny"
+    bypass         = ["AzureServices"]
+    virtual_network_subnet_ids = [var.subnet_id]
+  }
+
+  tags = var.tags
+}
+
+resource "azurerm_storage_account" "web" {
+  name                            = "${lower(module.naming_storage.storage_name)}sqlbackup"
+  resource_group_name             = var.resource_group_name
+  location                        = var.location
+  account_tier                    = local.account_tier
+  account_replication_type        = local.account_replication_type
+  account_kind                    = local.account_kind
+  https_traffic_only_enabled      = local.https_traffic_only_enabled
+  min_tls_version                = local.min_tls_version
+  allow_nested_items_to_be_public = local.allow_nested_items_to_be_public
+
+  network_rules {
+    default_action = "Deny"
     bypass         = ["AzureServices"]
     virtual_network_subnet_ids = [var.subnet_id]
   }
