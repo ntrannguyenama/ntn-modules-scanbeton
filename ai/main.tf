@@ -32,7 +32,7 @@ resource "azurerm_cognitive_account" "openai" {
   kind                = "OpenAI"
   sku_name            = "S0"
   tags                = var.tags
-  custom_subdomain_name = "scanbeton-api"
+  custom_subdomain_name = "scanbeton-api-oai"
 
   dynamic_throttling_enabled = false
   fqdns = []
