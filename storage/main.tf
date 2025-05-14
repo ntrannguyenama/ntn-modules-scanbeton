@@ -102,6 +102,22 @@ resource "azurerm_private_endpoint" "storage" {
   tags = var.tags
 }
 
+resource "azurerm_private_endpoint" "sql_storage" {
+  name                = "${module.naming_storage_pe.storageendpoint_name}-sql"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  subnet_id           = var.subnet_id
+
+  private_service_connection {
+    name                           = "${var.app_name}-${var.environment}-sql-stpsc"
+    private_connection_resource_id = azurerm_storage_account.sql.id
+    is_manual_connection           = false
+    subresource_names              = ["blob"]
+  }
+
+  tags = var.tags
+}
+
 module "naming_pe" {
   source = "../naming"
 
