@@ -106,3 +106,4 @@ module "secret" {
 
   key_vault = azurerm_key_vault.main
 }
+

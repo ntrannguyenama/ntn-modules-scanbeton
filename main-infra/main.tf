@@ -72,6 +72,7 @@ module "key_vault" {
   object_id              = data.azurerm_client_config.current.object_id
   key_vault = var.key_vault
   tags = local.tags
+  sql_password = module.database.password_db
 }
 
 module "service_plan" {
