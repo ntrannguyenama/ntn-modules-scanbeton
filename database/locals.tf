@@ -5,8 +5,8 @@ locals {
     public_network_access_enabled = var.sql.public_network_access_enabled != null ? var.sql.public_network_access_enabled : true
     outbound_network_restriction_enabled = var.sql.outbound_network_restriction_enabled != null ? var.sql.outbound_network_restriction_enabled : true
 
-    sku_name = var.sql.sku_name != null ? var.sql.sku_name : "Basic"
-    max_size_gb = var.sql.max_size_gb != null ? var.sql.max_size_gb : 2
+    sku_name = var.sql.sku_name != null ? var.sql.sku_name : "GP_Gen5_2"
+    max_size_gb = var.sql.max_size_gb != null ? var.sql.max_size_gb : 16
     geo_backup_enabled = var.sql.geo_backup_enabled != null ? var.sql.geo_backup_enabled : true
 
     base_tags = {
