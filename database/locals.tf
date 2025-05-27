@@ -3,7 +3,7 @@ locals {
     administrator_login = var.sql.administrator_login != null ? var.sql.administrator_login : "sqladmin"
     minimum_tls_version = var.sql.minimum_tls_version != null ? var.sql.minimum_tls_version : "1.2"
     public_network_access_enabled = var.sql.public_network_access_enabled != null ? var.sql.public_network_access_enabled : true
-    outbound_network_restriction_enabled = var.sql.outbound_network_restriction_enabled != null ? var.sql.outbound_network_restriction_enabled : true
+    outbound_network_restriction_enabled = var.sql.outbound_network_restriction_enabled != null ? var.sql.outbound_network_restriction_enabled : false
 
     sku_name = var.sql.sku_name != null ? var.sql.sku_name : "GP_Gen5_2"
     max_size_gb = var.sql.max_size_gb != null ? var.sql.max_size_gb : 16
