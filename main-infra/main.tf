@@ -145,6 +145,15 @@ module "ai" {
   resource_group_name           = module.resource_group.name
   tags                         = local.tags
 }
+
+module "frontdoor" {
+  source = "../frontdoor"
+
+  app_name                      = var.app_name
+  environment                   = var.environment
+  location                      = local.location
+  resource_group_name           = module.resource_group.name
+}
 /*
 module "iot" {
   count = var.enable_iot ? 1 : 0
