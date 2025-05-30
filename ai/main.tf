@@ -28,7 +28,7 @@ module "naming_search" {
 resource "azurerm_cognitive_account" "openai" {
   name                = "scanbeton-dev-openai"
   location            = "westeurope"
-  resource_group_name = "scanbeton-dev-rg"
+  resource_group_name = var.resource_group_name
   kind                = "OpenAI"
   sku_name            = "S0"
   tags                = var.tags
@@ -60,7 +60,7 @@ resource "azurerm_cognitive_account" "speech_service" {
   sku_name = "F0"
 
   tags = {
-    environment = "demo"
+    environment = "dev"
     service     = "speech"
   }
 }
