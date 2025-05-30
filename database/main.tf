@@ -14,6 +14,13 @@ resource "azurerm_mssql_server" "main" {
     type = "SystemAssigned"
   }
 
+  azuread_administrator {
+    login_username              = "admaz.m.benzekkour@bouyguesconstruction.onmicrosoft.com"
+    object_id                   = "beff5bb0-ca88-446e-8e6f-56e08c2071ec"
+    tenant_id                   = "4a3d9983-e936-4837-9552-9d9126a92eb0"
+    azuread_authentication_only = false
+  }
+
   tags = local.tags
 }
 

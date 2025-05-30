@@ -31,15 +31,3 @@ resource "random_password" "sql_admin" {
   min_special      = 1
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
-
-resource "azurerm_azuread_administrator" "admazbenzekkour" {
-  # Identifiant de l'annuaire Azure Active Directory
-  tenant_id = "4a3d9983-e936-4837-9552-9d9126a92eb0"
-
-  # Définition de l'utilisateur administrateur
-  login_username = "admaz.m.benzekkour@bouyguesconstruction.onmicrosoft.com"
-  object_id      = "beff5bb0-ca88-446e-8e6f-56e08c2071ec"
-
-  # Cette configuration détermine si l'authentification est seulement basée sur Azure AD
-  azuread_authentication_only = false
-}
