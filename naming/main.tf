@@ -37,9 +37,10 @@ locals {
     adu    = "adu"   # Device Update Account
     adupe  = "adupe" # Device Update Private Endpoint
     role   = "role"  # Role Assignment
-    openai = "oai"   # Azure OpenAI Service
+    openai = "openai"   # Azure OpenAI Service
     search = "srch"  # Azure Cognitive Search
     speech = "speech"
+    frontdoor = "fd" # Azure Frontdoor
   }
 
   resource_name = "${var.app_name}-${var.environment}-${lookup(local.resource_types, var.resource_type)}${var.suffix != null ? "-${var.suffix}" : ""}"
